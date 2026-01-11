@@ -82,7 +82,6 @@ This project was developed as a benchmark for clean Angular architecture, demons
 - **Routing**: Parameterized routes, lazy loading, and `CanActivate` guards.
 - **Dependency Injection**: Decoupled business logic in Services.
 - **Forms**: Advanced **Reactive Forms** and **Template-driven** concepts.
-- **RxJS**: Stream management with `switchMap`, `forkJoin`, and `BehaviorSubject`.
 - **Custom Pipes/Directives**: `CategoryFilterPipe` and `HighlightEventDirective`.
 - **Interceptors**: Global HTTP loading state management.
 
@@ -97,17 +96,16 @@ This project was developed as a benchmark for clean Angular architecture, demons
 | Lazy-Loaded Routes | 3                                 |
 | Guard Protection   | Auth Guard on Dashboard           |
 
-## 📸 Project Screenshots
+## 🎨 Screenshots & Usage
 
-| **Event Discovery** | **Immersive Details** |
-|:---:|
-| ![Events Page](screenshots/eventsPageScreenshot.png) | ![Event Details](screenshots/eventDetailsPageScreenshot.png) |
-| *Browse upcoming events with filters* | *Rich details with tabs and sticky booking* |
-
-| **Secure Booking** | **User Dashboard** |
-|:---:|
-| ![Booking Form](screenshots/bookingFormScreenshot.png) | ![Dashboard](screenshots/dashboardPageScreenshot.png) |
-| *Form validation and auth checks* | *Manage your reservations* |
+**Event List View**: *Browse upcoming events with filters*
+![Events Page](public/assets/images/eventsPageScreenshot.png)
+**Event Detail**: *Rich details with tabs and sticky booking*
+![Event Details](public/assets/images/eventDetailsPageScreenshot.png)
+**Booking Form**: *Reactive form with custom validation and seat availability checks*
+![Booking Form](public/assets/images/bookingFormScreenshot.png)
+**Dashboard**: *User's private area for tracking reservations*
+![Dashboard](public/assets/images/dashboardPageScreenshot.png)
 
 ## 📚 Documentation
 
@@ -138,7 +136,6 @@ The application integrates with local JSON data sources:
 This project showcases practical implementation of:
 
 - Advanced Angular architectural patterns
-- RxJS reactive programming
 - Material Design system
 - Professional coding standards
 - Component communication and state management
