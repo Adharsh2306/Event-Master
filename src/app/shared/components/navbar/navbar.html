@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <span>Event Manager</span>
+  <span class="spacer"></span>
+  
+  <a mat-button routerLink="/events" routerLinkActive="active-link">Events</a>
+  
+  <ng-container *ngIf="isLoggedIn$ | async; else loginBtn">
+    <a mat-button routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a>
+    <button mat-button (click)="logout()">Logout</button>
+  </ng-container>
+
+  <ng-template #loginBtn>
+    <button mat-button (click)="login()">Login (Demo)</button>
+  </ng-template>
+</mat-toolbar>
