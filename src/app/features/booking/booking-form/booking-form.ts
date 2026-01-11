@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 import { switchMap } from 'rxjs';
 import { EventService } from '../../../core/services/event';
 import { BookingService } from '../../../core/services/booking';
 import { UserService } from '../../../core/services/user';
 import { Event } from '../../../models/event.model';
 import { Booking } from '../../../models/booking.model';
+import { ConfirmationDialog } from '../../../shared/components/confirmation-dialog/confirmation-dialog';
 
 @Component({
   selector: 'app-booking-form',
@@ -27,7 +28,7 @@ export class BookingForm implements OnInit {
     private eventService: EventService,
     private bookingService: BookingService,
     private userService: UserService,
-    private snackBar: MatSnackBar
+    private dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -46,7 +47,6 @@ export class BookingForm implements OnInit {
           this.updateValidators();
           this.loading = false;
         } else {
-          // Handle invalid event ID
           this.router.navigate(['/events']);
         }
       },
@@ -84,26 +84,32 @@ export class BookingForm implements OnInit {
       const currentUser = this.userService.getCurrentUser();
       
       const booking: Booking = {
-        id: 0, // Assigned by service
+        id: 0, 
         eventId: this.event.id,
-        userId: currentUser ? currentUser.id : 999, // 999 for Guest
+        userId: currentUser ? currentUser.id : 999, 
         ticketsBooked: formValue.tickets,
         bookingDate: new Date().toISOString(),
         status: 'Active'
       };
 
-      this.bookingService.createBooking(booking).subscribe(() => {
-        this.snackBar.open('Booking confirmed successfully!', 'Close', {
-          duration: 3000,
-          panelClass: ['success-snackbar']
+      this.bookingService.createBooking(booking).subscribe((newBooking) => {
+        const dialogRef = this.dialog.open(ConfirmationDialog, {
+          width: '400px',
+          data: {
+            eventTitle: this.event.title,
+            tickets: newBooking.ticketsBooked,
+            bookingId: newBooking.id
+          },
+          disableClose: true
         });
-        
-        // Navigate to dashboard if logged in, else home
-        if (currentUser) {
-          this.router.navigate(['/dashboard']);
-        } else {
-          this.router.navigate(['/events']);
-        }
+
+        dialogRef.afterClosed().subscribe(() => {
+          if (currentUser) {
+            this.router.navigate(['/dashboard']);
+          } else {
+            this.router.navigate(['/events']);
+          }
+        });
       });
     }
   }

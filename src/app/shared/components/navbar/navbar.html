@@ -8,6 +8,10 @@
   <a mat-button routerLink="/events" routerLinkActive="active-link">
     <mat-icon>event</mat-icon> Events
   </a>
+
+  <a mat-button routerLink="/contact" routerLinkActive="active-link">
+    <mat-icon>mail</mat-icon> Contact
+  </a>
   
   <ng-container *ngIf="isLoggedIn$ | async; else loginBtn">
     <a mat-button routerLink="/dashboard" routerLinkActive="active-link">

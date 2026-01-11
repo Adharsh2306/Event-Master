@@ -1,30 +1,30 @@
 [
   {
     "id": 101,
-    "name": "Tech Convention Center",
-    "address": "123 Innovation Dr",
-    "city": "San Francisco",
-    "capacity": 200
+    "name": "Bangalore International Exhibition Centre (BIEC)",
+    "address": "10th Mile, Tumkur Road",
+    "city": "Bengaluru",
+    "capacity": 5000
   },
   {
     "id": 102,
-    "name": "Central Park Open Grounds",
-    "address": "5th Avenue",
-    "city": "New York",
+    "name": "Chowdiah Memorial Hall",
+    "address": "16th Cross, G.D. Park Extension, Vyalikaval",
+    "city": "Bengaluru",
     "capacity": 1000
   },
   {
     "id": 103,
-    "name": "City Stadium",
-    "address": "100 Sports Way",
-    "city": "Chicago",
-    "capacity": 5000
+    "name": "Sree Kanteerava Stadium",
+    "address": "Kasturba Road, Sampangi Rama Nagara",
+    "city": "Bengaluru",
+    "capacity": 25000
   },
   {
     "id": 104,
-    "name": "Downtown Hub",
-    "address": "456 Market St",
-    "city": "Seattle",
-    "capacity": 150
+    "name": "WeWork Galaxy",
+    "address": "43, Residency Road, Shanthala Nagar",
+    "city": "Bengaluru",
+    "capacity": 200
   }
 ]

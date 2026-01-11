@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="contact-layout">
+    <div class="contact-info">
+      <h1>Get in Touch</h1>
+      <p>Have questions about an event or need help with your booking? Our team is here to support you.</p>
+      
+      <div class="info-list">
+        <div class="info-item">
+          <mat-icon>email</mat-icon>
+          <span>namaste@eventmaster.in</span>
+        </div>
+        <div class="info-item">
+          <mat-icon>phone</mat-icon>
+          <span>+91 80 4123 4567</span>
+        </div>
+        <div class="info-item">
+          <mat-icon>location_on</mat-icon>
+          <span>Prestige Tech Park, Marathahalli<br>Bengaluru, Karnataka 560103</span>
+        </div>
+      </div>
+    </div>
+
+    <mat-card class="form-card">
+      <mat-card-content>
+        <!-- Template Driven Form -->
+        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" novalidate>
+          
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Full Name</mat-label>
+            <input matInput name="name" [(ngModel)]="contactData.name" required #name="ngModel">
+            <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">Name is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email Address</mat-label>
+            <input matInput type="email" name="email" [(ngModel)]="contactData.email" required email #email="ngModel">
+            <mat-error *ngIf="email.errors?.['required'] && (email.dirty || email.touched)">Email is required</mat-error>
+            <mat-error *ngIf="email.errors?.['email'] && (email.dirty || email.touched)">Please enter a valid email</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Subject</mat-label>
+            <mat-select name="subject" [(ngModel)]="contactData.subject">
+              <mat-option *ngFor="let s of subjects" [value]="s">{{s}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Message</mat-label>
+            <textarea matInput name="message" rows="5" [(ngModel)]="contactData.message" required minlength="10" #msg="ngModel"></textarea>
+            <mat-hint align="end">{{contactData.message.length}} / 10 min</mat-hint>
+            <mat-error *ngIf="msg.errors?.['required'] && (msg.dirty || msg.touched)">Message is required</mat-error>
+            <mat-error *ngIf="msg.errors?.['minlength'] && (msg.dirty || msg.touched)">Message must be at least 10 characters</mat-error>
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid" class="submit-btn">
+            SEND MESSAGE
+          </button>
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

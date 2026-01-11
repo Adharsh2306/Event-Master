@@ -1,16 +1,29 @@
 <div class="container">
+  
   <div class="header-section">
-    <h1>Discover Events</h1>
-    <mat-form-field appearance="outline" class="category-filter">
-      <mat-label>Filter by Category</mat-label>
-      <mat-select [(value)]="selectedCategory">
-        <mat-option *ngFor="let cat of categories" [value]="cat">{{cat}}</mat-option>
-      </mat-select>
-      <mat-icon matSuffix>filter_list</mat-icon>
-    </mat-form-field>
+    <div>
+      <h1>Discover Experiences</h1>
+      <p style="color: var(--text-secondary); margin: 0;">Find and book the best events in town</p>
+    </div>
   </div>
 
-  <div class="event-grid" *ngIf="events$ | async as events; else loading">
+  <!-- Category Filter with Chips -->
+  <div class="filter-container">
+    <mat-chip-listbox aria-label="Category selection">
+      <mat-chip-option *ngFor="let cat of categories" 
+                       [selected]="selectedCategory === cat"
+                       (selectionChange)="selectCategory(cat)"
+                       color="primary">
+        {{cat}}
+      </mat-chip-option>
+    </mat-chip-listbox>
+  </div>
+
+  <!-- Event Grid with Staggered Animation -->
+  <div class="event-grid" 
+       *ngIf="events$ | async as events; else loading" 
+       [@listAnimation]="(events | categoryFilter:selectedCategory).length">
+    
     <mat-card *ngFor="let event of events | categoryFilter:selectedCategory" 
               class="event-card"
               [appHighlightEvent]="event.isFeatured"
@@ -19,38 +32,44 @@
       <div class="card-image-wrapper">
         <img [src]="event.image" [alt]="event.title" class="event-image">
         <span class="category-tag">{{event.category}}</span>
+        <div class="card-overlay"></div>
       </div>
 
       <mat-card-header>
         <mat-card-title>{{event.title}}</mat-card-title>
         <mat-card-subtitle>
-          <mat-icon style="font-size: 18px; width: 18px; height: 18px;">event</mat-icon>
-          {{event.date | date:'mediumDate'}}
+          <div class="meta-row">
+            <span><mat-icon>calendar_today</mat-icon> {{event.date | date:'mediumDate'}}</span>
+          </div>
         </mat-card-subtitle>
       </mat-card-header>
 
       <mat-card-content>
-        <p>{{event.description | slice:0:80}}...</p>
-        <div class="seats-info">
-          <strong>{{event.availableSeats}}</strong> seats remaining
+        <p>{{event.description | slice:0:90}}...</p>
+        
+        <div class="card-footer-info">
+          <div class="seats-badge" [class.low-stock]="event.availableSeats < 20">
+            <mat-icon>event_seat</mat-icon>
+            {{event.availableSeats}} left
+          </div>
+          <span class="price">Free</span>
         </div>
       </mat-card-content>
 
-      <mat-card-actions align="end">
-        <button mat-button color="primary">DETAILS</button>
-        <button mat-raised-button color="primary" *ngIf="event.availableSeats > 0">BOOK</button>
-      </mat-card-actions>
     </mat-card>
 
+    <!-- Empty State -->
     <div *ngIf="(events | categoryFilter:selectedCategory).length === 0" class="no-results">
-      <p>No events found in this category.</p>
+      <mat-icon>search_off</mat-icon>
+      <h3>No events found</h3>
+      <p>Try selecting a different category</p>
     </div>
   </div>
   
   <ng-template #loading>
     <div class="loading">
       <mat-spinner diameter="50"></mat-spinner>
-      <p>Loading amazing events...</p>
+      <p>Curating events for you...</p>
     </div>
   </ng-template>
 </div>

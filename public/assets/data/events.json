@@ -1,58 +1,58 @@
 [
   {
     "id": 1,
-    "title": "Angular Advanced Workshop",
-    "description": "Deep dive into Angular 17+ features, signals, and performance optimization. Join industry experts for hands-on coding sessions.",
+    "title": "Bengaluru Tech Summit 2026",
+    "description": "Asia's largest technology event. Join industry leaders in Whitefield to discuss AI, Robotics, and the future of Indian IT.",
     "category": "Tech",
     "date": "2026-02-15",
     "time": "09:00",
     "venueId": 101,
-    "organizer": "TechWorld Inc.",
-    "totalSeats": 50,
+    "organizer": "Karnataka Digital Economy Mission",
+    "totalSeats": 500,
     "availableSeats": 45,
     "isFeatured": true,
-    "image": "https://picsum.photos/seed/angular1/800/600"
+    "image": "https://picsum.photos/seed/techblr/800/600"
   },
   {
     "id": 2,
-    "title": "Summer Music Festival",
-    "description": "A weekend of live music, food, and fun under the sun. Featuring top bands from around the country.",
+    "title": "Carnatic Classical Night",
+    "description": "A soulful evening of Carnatic music featuring renowned artists. Experience the cultural heritage of South India.",
     "category": "Music",
     "date": "2026-06-20",
-    "time": "14:00",
+    "time": "18:00",
     "venueId": 102,
-    "organizer": "Vibe Events",
-    "totalSeats": 500,
+    "organizer": "Sangeetha Sabha Bengaluru",
+    "totalSeats": 800,
     "availableSeats": 120,
     "isFeatured": true,
-    "image": "https://picsum.photos/seed/musicfest/800/600"
+    "image": "https://picsum.photos/seed/musicblr/800/600"
   },
   {
     "id": 3,
-    "title": "City Marathon 2026",
-    "description": "Annual city marathon. Run for a cause! Registration includes a t-shirt and medal.",
+    "title": "Namma Bengaluru Marathon",
+    "description": "Run through the green streets of Cubbon Park and MG Road. Promoting fitness and a greener city.",
     "category": "Sports",
     "date": "2026-03-10",
-    "time": "06:00",
+    "time": "05:30",
     "venueId": 103,
-    "organizer": "City Sports Club",
-    "totalSeats": 1000,
+    "organizer": "Run India Foundation",
+    "totalSeats": 2000,
     "availableSeats": 850,
     "isFeatured": false,
-    "image": "https://picsum.photos/seed/marathon/800/600"
+    "image": "https://picsum.photos/seed/runblr/800/600"
   },
   {
     "id": 4,
-    "title": "Startup Pitch Night",
-    "description": "Watch the best startups pitch their ideas to investors. Network with entrepreneurs and VCs.",
+    "title": "Indiranagar Startup Meetup",
+    "description": "Pitch your ideas to top VCs from Koramangala and HSR Layout. Network with the founders of India's next unicorns.",
     "category": "Business",
     "date": "2026-04-05",
-    "time": "18:00",
+    "time": "17:00",
     "venueId": 104,
-    "organizer": "Startup Hub",
-    "totalSeats": 100,
+    "organizer": "Startup Karnataka",
+    "totalSeats": 150,
     "availableSeats": 10,
     "isFeatured": false,
-    "image": "https://picsum.photos/seed/startup/800/600"
+    "image": "https://picsum.photos/seed/startupblr/800/600"
   }
 ]

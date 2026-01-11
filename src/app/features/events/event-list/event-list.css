@@ -1,25 +1,27 @@
 .header-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 32px;
-  padding: 0 8px;
+  margin-bottom: 24px;
 }
 
 .header-section h1 {
-  font-size: 2rem;
-  font-weight: 300;
-  color: var(--text-main);
-  border-left: 4px solid var(--primary-blue);
-  padding-left: 16px;
-  margin: 0;
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--text-main) 0%, var(--primary-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.filter-container {
+  margin-bottom: 40px;
+  overflow-x: auto;
+  padding-bottom: 8px; /* Space for scrollbar */
 }
 
 .event-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 32px;
-  padding-bottom: 40px;
+  min-height: 400px;
 }
 
 /* Card Styling */
@@ -31,7 +33,7 @@
   cursor: pointer;
   border: none;
   background: white;
-  position: relative;
+  transition: var(--trans-default);
 }
 
 .event-card:hover {
@@ -40,77 +42,145 @@
 }
 
 .card-image-wrapper {
-  height: 200px;
-  overflow: hidden;
+  height: 220px;
   position: relative;
+  overflow: hidden;
 }
 
 .event-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease;
 }
 
 .event-card:hover .event-image {
   transform: scale(1.05);
 }
 
+.card-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.4));
+  opacity: 0.6;
+}
+
 .category-tag {
   position: absolute;
   top: 16px;
   right: 16px;
-  background: rgba(255, 255, 255, 0.9);
-  color: var(--primary-blue);
-  padding: 4px 12px;
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text-main);
+  padding: 6px 14px;
+  border-radius: 50px;
   font-size: 0.75rem;
-  font-weight: bold;
+  font-weight: 700;
   box-shadow: var(--shadow-sm);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  z-index: 2;
 }
 
 .event-card mat-card-header {
-  padding: 16px 16px 0 16px;
+  padding: 20px 20px 0 20px;
 }
 
 .event-card mat-card-title {
+  font-family: 'Poppins', sans-serif;
   font-size: 1.25rem;
   line-height: 1.4;
   margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.meta-row {
+  display: flex;
+  gap: 16px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
-.event-card mat-card-subtitle {
-  color: var(--accent-cyan);
-  font-weight: 500;
+.meta-row span {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+}
+
+.meta-row mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  color: var(--primary-blue);
 }
 
 .event-card mat-card-content {
   flex-grow: 1;
-  padding: 16px;
+  padding: 16px 20px 24px 20px;
   color: var(--text-secondary);
-  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
 }
 
-.event-card mat-card-actions {
-  padding: 8px 16px 16px 16px;
-  border-top: 1px solid #f0f0f0;
+.event-card mat-card-content p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
 }
 
-.seats-info {
+.card-footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 16px;
+}
+
+.seats-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.85rem;
-  color: var(--text-light);
-  margin-top: auto;
+  font-weight: 600;
+  color: var(--secondary-blue);
+  background: var(--primary-blue-light);
+  padding: 6px 12px;
+  border-radius: 8px;
 }
 
-/* Highlight Directive Styles (if applied via class) */
-.featured-event {
-  border: 2px solid var(--accent-cyan);
+.seats-badge.low-stock {
+  color: #DC2626;
+  background: #FEE2E2;
+}
+
+.seats-badge mat-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--text-main);
+  font-size: 1.1rem;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px;
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.no-results mat-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  opacity: 0.5;
 }
 
 .loading {
@@ -118,7 +188,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  height: 50vh;
   color: var(--text-light);
   gap: 16px;
 }

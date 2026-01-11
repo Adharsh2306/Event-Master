@@ -7,12 +7,16 @@ import { MaterialModule } from './material/material-module';
 import { Navbar } from './components/navbar/navbar';
 import { CategoryFilterPipe } from './pipes/category-filter-pipe';
 import { HighlightEvent } from './directives/highlight-event';
+import { Footer } from './components/footer/footer';
+import { ConfirmationDialog } from './components/confirmation-dialog/confirmation-dialog';
 
 @NgModule({
   declarations: [
     Navbar,
     CategoryFilterPipe,
-    HighlightEvent
+    HighlightEvent,
+    Footer,
+    ConfirmationDialog
   ],
   imports: [
     CommonModule,
@@ -29,7 +33,9 @@ import { HighlightEvent } from './directives/highlight-event';
     ReactiveFormsModule,
     Navbar,
     CategoryFilterPipe,
-    HighlightEvent
+    HighlightEvent,
+    Footer,
+    ConfirmationDialog
   ]
 })
 export class SharedModule { }
