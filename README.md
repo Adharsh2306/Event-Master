@@ -99,13 +99,13 @@ This project was developed as a benchmark for clean Angular architecture, demons
 ## 🎨 Screenshots & Usage
 
 **Event List View**: _Browse upcoming events with filters_
-![Events Page](public/assets/images/eventsPageScreenshot.png)
+![Events Page](screenshots/eventsPageScreenshot.png)
 **Event Detail**: _Rich details with tabs and sticky booking_
-![Event Details](public/assets/images/eventDetailsPageScreenshot.png)
+![Event Details](screenshots/eventDetailsPageScreenshot.png)
 **Booking Form**: _Reactive form with custom validation and seat availability checks_
-![Booking Form](public/assets/images/bookingFormScreenshot.png)
+![Booking Form](screenshots/bookingFormScreenshot.png)
 **Dashboard**: _User's private area for tracking reservations_
-![Dashboard](public/assets/images/dashboardPageScreenshot.png)
+![Dashboard](screenshots/dashboardPageScreenshot.png)
 
 ## 📚 Documentation
 
