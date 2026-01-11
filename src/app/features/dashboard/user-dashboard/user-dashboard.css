@@ -1,0 +1,47 @@
+.dashboard-content {
+  margin-top: 24px;
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  background-color: #eee;
+  color: #666;
+}
+
+.status-badge.active {
+  background-color: #e8f5e9; /* Light green */
+  color: #2e7d32; /* Dark green */
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px dashed #ccc;
+}
+
+.empty-state mat-icon {
+  font-size: 48px;
+  height: 48px;
+  width: 48px;
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 48px;
+}

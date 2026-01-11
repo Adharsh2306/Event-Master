@@ -1,0 +1,68 @@
+<div class="container">
+  <h1>My Dashboard</h1>
+  
+  <div class="dashboard-content">
+    <ng-container *ngIf="bookings$ | async as bookings; else loading">
+      <div *ngIf="bookings.length > 0; else noBookings" class="table-container mat-elevation-z2">
+        <table mat-table [dataSource]="bookings">
+          
+          <!-- Booking ID Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Booking ID </th>
+            <td mat-cell *matCellDef="let element"> #{{element.id}} </td>
+          </ng-container>
+        
+          <!-- Event Column -->
+          <ng-container matColumnDef="eventTitle">
+            <th mat-header-cell *matHeaderCellDef> Event </th>
+            <td mat-cell *matCellDef="let element"> 
+              <strong>{{element.eventTitle}}</strong> <br>
+              <small>{{element.eventDate | date}}</small>
+            </td>
+          </ng-container>
+        
+          <!-- Date Column -->
+          <ng-container matColumnDef="bookingDate">
+            <th mat-header-cell *matHeaderCellDef> Booked On </th>
+            <td mat-cell *matCellDef="let element"> {{element.bookingDate | date:'short'}} </td>
+          </ng-container>
+        
+          <!-- Tickets Column -->
+          <ng-container matColumnDef="ticketsBooked">
+            <th mat-header-cell *matHeaderCellDef> Tickets </th>
+            <td mat-cell *matCellDef="let element"> {{element.ticketsBooked}} </td>
+          </ng-container>
+
+           <!-- Status Column -->
+           <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element"> 
+              <span class="status-badge" [class.active]="element.status === 'Active'">
+                {{element.status}}
+              </span>
+            </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+
+      <ng-template #noBookings>
+        <div class="empty-state">
+          <mat-icon>event_busy</mat-icon>
+          <h3>No bookings found</h3>
+          <p>You haven't booked any events yet.</p>
+          <button mat-raised-button color="primary" routerLink="/events">Browse Events</button>
+        </div>
+      </ng-template>
+
+    </ng-container>
+
+    <ng-template #loading>
+      <div class="loading">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-template>
+  </div>
+</div>
