@@ -9,6 +9,7 @@ import { CategoryFilterPipe } from './pipes/category-filter-pipe';
 import { HighlightEvent } from './directives/highlight-event';
 import { Footer } from './components/footer/footer';
 import { ConfirmationDialog } from './components/confirmation-dialog/confirmation-dialog';
+import { LoginPromptDialog } from './components/login-prompt-dialog/login-prompt-dialog';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ConfirmationDialog } from './components/confirmation-dialog/confirmatio
     CategoryFilterPipe,
     HighlightEvent,
     Footer,
-    ConfirmationDialog
+    ConfirmationDialog,
+    LoginPromptDialog
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { ConfirmationDialog } from './components/confirmation-dialog/confirmatio
     CategoryFilterPipe,
     HighlightEvent,
     Footer,
-    ConfirmationDialog
+    ConfirmationDialog,
+    LoginPromptDialog
   ]
 })
 export class SharedModule { }

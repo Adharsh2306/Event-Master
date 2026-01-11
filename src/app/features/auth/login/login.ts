@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from '../../../core/services/user';
 
@@ -10,20 +10,26 @@ import { UserService } from '../../../core/services/user';
   templateUrl: './login.html',
   styleUrls: ['./login.css']
 })
-export class Login {
+export class Login implements OnInit {
   loginForm: FormGroup;
   loading = false;
+  returnUrl: string = '/dashboard';
 
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
     private router: Router,
+    private route: ActivatedRoute,
     private snackBar: MatSnackBar
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
+  }
+
+  ngOnInit() {
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/dashboard';
   }
 
   onSubmit() {
@@ -35,7 +41,7 @@ export class Login {
         this.loading = false;
         if (success) {
           this.snackBar.open('Welcome back!', 'Close', { duration: 3000 });
-          this.router.navigate(['/dashboard']);
+          this.router.navigateByUrl(this.returnUrl);
         } else {
           this.snackBar.open('Invalid credentials. Try rahul.d@example.com', 'Close', { 
             duration: 4000,

@@ -9,6 +9,7 @@ import { UserService } from '../../../core/services/user';
 import { Event } from '../../../models/event.model';
 import { Booking } from '../../../models/booking.model';
 import { ConfirmationDialog } from '../../../shared/components/confirmation-dialog/confirmation-dialog';
+import { LoginPromptDialog } from '../../../shared/components/login-prompt-dialog/login-prompt-dialog';
 
 @Component({
   selector: 'app-booking-form',
@@ -34,6 +35,23 @@ export class BookingForm implements OnInit {
   ngOnInit() {
     this.initForm();
     
+    // Check Authentication
+    if (!this.userService.isLoggedIn()) {
+      const dialogRef = this.dialog.open(LoginPromptDialog, { disableClose: true });
+      
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          // User wants to login
+          const eventId = this.route.snapshot.paramMap.get('eventId');
+          this.router.navigate(['/login'], { queryParams: { returnUrl: `/book/${eventId}` } });
+        } else {
+          // User cancelled
+          this.router.navigate(['/events']);
+        }
+      });
+      return; // Stop loading booking form
+    }
+
     // Load event details
     this.route.paramMap.pipe(
       switchMap(params => {
@@ -53,7 +71,7 @@ export class BookingForm implements OnInit {
       error: () => this.loading = false
     });
 
-    // Pre-fill if user logged in
+    // Pre-fill user data
     const user = this.userService.getCurrentUser();
     if (user) {
       this.bookingForm.patchValue({
@@ -83,10 +101,12 @@ export class BookingForm implements OnInit {
       const formValue = this.bookingForm.value;
       const currentUser = this.userService.getCurrentUser();
       
+      if (!currentUser) return; // Should not happen due to guard check
+
       const booking: Booking = {
         id: 0, 
         eventId: this.event.id,
-        userId: currentUser ? currentUser.id : 999, 
+        userId: currentUser.id,
         ticketsBooked: formValue.tickets,
         bookingDate: new Date().toISOString(),
         status: 'Active'
@@ -104,11 +124,7 @@ export class BookingForm implements OnInit {
         });
 
         dialogRef.afterClosed().subscribe(() => {
-          if (currentUser) {
-            this.router.navigate(['/dashboard']);
-          } else {
-            this.router.navigate(['/events']);
-          }
+          this.router.navigate(['/dashboard']);
         });
       });
     }
