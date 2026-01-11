@@ -25,9 +25,9 @@
     </ng-container>
 
     <ng-template #loginBtn>
-      <button mat-button (click)="login()">
-        <mat-icon>login</mat-icon> Login (Demo)
-      </button>
+      <a mat-button routerLink="/login">
+        <mat-icon>login</mat-icon> Login
+      </a>
     </ng-template>
   </div>
 
@@ -54,8 +54,8 @@
     </ng-container>
 
     <ng-template #mobileLogin>
-      <button mat-menu-item (click)="login()">
-        <mat-icon>login</mat-icon> Login (Demo)
+      <button mat-menu-item routerLink="/login">
+        <mat-icon>login</mat-icon> Login
       </button>
     </ng-template>
   </mat-menu>

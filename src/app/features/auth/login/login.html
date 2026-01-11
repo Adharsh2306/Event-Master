@@ -1,0 +1,42 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <div class="login-header">
+      <div class="logo-icon">
+        <mat-icon>lock</mat-icon>
+      </div>
+      <h1>Welcome Back</h1>
+      <p>Sign in to manage your bookings</p>
+    </div>
+
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email Address</mat-label>
+          <input matInput formControlName="email" placeholder="name@example.com">
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Email is required</mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Please enter a valid email</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password">
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password is required</mat-error>
+        </mat-form-field>
+
+        <div class="demo-hint">
+          <mat-icon>info</mat-icon>
+          <div style="display: flex; flex-direction: column;">
+            <span>Demo Email: <strong>rahul.d@example.com</strong></span>
+            <span>Password: <strong>password123</strong></span>
+          </div>
+        </div>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid || loading" class="login-btn">
+          {{ loading ? 'SIGNING IN...' : 'SIGN IN' }}
+        </button>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

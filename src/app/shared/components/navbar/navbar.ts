@@ -21,11 +21,6 @@ export class Navbar implements OnInit {
     this.currentUser$ = this.userService.currentUser$;
   }
 
-  login() {
-    // Simulating login for demo
-    this.userService.login('john.doe@example.com').subscribe();
-  }
-
   logout() {
     this.userService.logout();
     this.router.navigate(['/events']);

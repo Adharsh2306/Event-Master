@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'contact', 
     loadChildren: () => import('./features/contact/contact-module').then(m => m.ContactModule) 
   },
+  { 
+    path: 'login', 
+    loadChildren: () => import('./features/auth/auth-module').then(m => m.AuthModule) 
+  },
   { path: '**', redirectTo: '/events' }
 ];
 
