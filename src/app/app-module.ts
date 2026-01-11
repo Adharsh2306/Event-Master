@@ -1,8 +1,12 @@
-import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { CoreModule } from './core/core-module';
+import { loadingInterceptor } from './core/interceptors/loading-interceptor';
 
 @NgModule({
   declarations: [
@@ -10,10 +14,12 @@ import { App } from './app';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    CoreModule
   ],
   providers: [
-    provideBrowserGlobalErrorListeners()
+    provideHttpClient(withInterceptors([loadingInterceptor]))
   ],
   bootstrap: [App]
 })
