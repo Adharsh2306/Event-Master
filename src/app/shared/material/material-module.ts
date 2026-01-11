@@ -15,6 +15,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule } from '@angular/material/chips';
 
 const MATERIAL_MODULES = [
@@ -34,7 +35,8 @@ const MATERIAL_MODULES = [
   MatNativeDateModule,
   MatTabsModule,
   MatProgressBarModule,
-  MatChipsModule
+  MatChipsModule,
+  MatMenuModule
 ];
 
 @NgModule({

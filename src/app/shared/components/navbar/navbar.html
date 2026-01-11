@@ -5,26 +5,59 @@
   </span>
   <span class="spacer"></span>
   
-  <a mat-button routerLink="/events" routerLinkActive="active-link">
-    <mat-icon>event</mat-icon> Events
-  </a>
-
-  <a mat-button routerLink="/contact" routerLinkActive="active-link">
-    <mat-icon>mail</mat-icon> Contact
-  </a>
-  
-  <ng-container *ngIf="isLoggedIn$ | async; else loginBtn">
-    <a mat-button routerLink="/dashboard" routerLinkActive="active-link">
-      <mat-icon>dashboard</mat-icon> Dashboard
+  <!-- Desktop Menu -->
+  <div class="desktop-menu">
+    <a mat-button routerLink="/events" routerLinkActive="active-link">
+      <mat-icon>event</mat-icon> Events
     </a>
-    <button mat-button (click)="logout()">
-      <mat-icon>logout</mat-icon> Logout
-    </button>
-  </ng-container>
+    
+    <a mat-button routerLink="/contact" routerLinkActive="active-link">
+      <mat-icon>mail</mat-icon> Contact
+    </a>
+    
+    <ng-container *ngIf="isLoggedIn$ | async; else loginBtn">
+      <a mat-button routerLink="/dashboard" routerLinkActive="active-link">
+        <mat-icon>dashboard</mat-icon> Dashboard
+      </a>
+      <button mat-button (click)="logout()">
+        <mat-icon>logout</mat-icon> Logout
+      </button>
+    </ng-container>
 
-  <ng-template #loginBtn>
-    <button mat-button (click)="login()">
-      <mat-icon>login</mat-icon> Login (Demo)
+    <ng-template #loginBtn>
+      <button mat-button (click)="login()">
+        <mat-icon>login</mat-icon> Login (Demo)
+      </button>
+    </ng-template>
+  </div>
+
+  <!-- Mobile Menu Button -->
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-menu-btn">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/events">
+      <mat-icon>event</mat-icon> Events
     </button>
-  </ng-template>
+    <button mat-menu-item routerLink="/contact">
+      <mat-icon>mail</mat-icon> Contact
+    </button>
+    
+    <ng-container *ngIf="isLoggedIn$ | async; else mobileLogin">
+      <button mat-menu-item routerLink="/dashboard">
+        <mat-icon>dashboard</mat-icon> Dashboard
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon> Logout
+      </button>
+    </ng-container>
+
+    <ng-template #mobileLogin>
+      <button mat-menu-item (click)="login()">
+        <mat-icon>login</mat-icon> Login (Demo)
+      </button>
+    </ng-template>
+  </mat-menu>
+
 </mat-toolbar>

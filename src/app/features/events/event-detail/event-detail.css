@@ -31,6 +31,7 @@
   display: flex;
   gap: 16px;
   margin-bottom: 16px;
+  flex-wrap: wrap; /* Allow wrapping on mobile */
 }
 
 .hero-title {
@@ -39,7 +40,6 @@
   font-weight: 700;
   line-height: 1.1;
   color: #FFFFFF;
-  /* Dark outline using text-shadow for compatibility or -webkit-text-stroke */
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5); 
   text-shadow: 
     3px 3px 6px rgba(0, 0, 0, 0.9),
@@ -56,6 +56,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap; /* Wrap date/time on mobile */
 }
 
 /* Badges */
@@ -66,6 +67,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap; /* Prevent breaking inside badge */
 }
 
 .badge-category {
@@ -230,11 +232,49 @@
   padding: 0;
 }
 
+/* RESPONSIVE STYLES */
 @media (max-width: 900px) {
   .detail-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Stack sidebar below content */
     margin-top: 0;
+    gap: 24px;
   }
   
   .hero-title { font-size: 2.5rem; }
+  
+  /* Make sidebar relative on mobile so it doesn't stick over footer */
+  .booking-sidebar {
+    position: relative; 
+    top: 0;
+    order: -1; /* Optional: Move booking card ABOVE content on mobile? 
+                  Often better to keep below intro but maybe above full details.
+                  Let's keep it default order (below) for now or use order: 1 */
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-header { height: 300px; }
+  .hero-overlay { padding-bottom: 32px; }
+  
+  .hero-title { font-size: 2rem; }
+  
+  .hero-subtitle {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .hero-subtitle span { display: none; } /* Hide the dot separator */
+
+  .features-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+
+  .section-content {
+    padding: 24px 16px;
+  }
+  
+  .detail-layout {
+    padding: 0 16px;
+  }
 }

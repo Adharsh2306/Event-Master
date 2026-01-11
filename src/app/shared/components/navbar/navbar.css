@@ -21,6 +21,12 @@ mat-toolbar {
   flex: 1 1 auto;
 }
 
+/* Desktop Menu Styles */
+.desktop-menu {
+  display: flex;
+  align-items: center;
+}
+
 .active-link {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 4px;
@@ -34,4 +40,25 @@ a.mat-mdc-button {
 
 a.mat-mdc-button:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-btn {
+  display: none; /* Hidden by default on desktop */
+  color: white;
+}
+
+/* Responsive Breakpoint */
+@media (max-width: 768px) {
+  mat-toolbar {
+    padding: 0 16px;
+  }
+
+  .desktop-menu {
+    display: none; /* Hide desktop menu on mobile */
+  }
+
+  .mobile-menu-btn {
+    display: block; /* Show hamburger on mobile */
+  }
 }
