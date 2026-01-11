@@ -1,68 +1,164 @@
-<div class="container" *ngIf="event$ | async as event; else loading">
-  <button mat-button color="accent" routerLink="/events">
-    <mat-icon>arrow_back</mat-icon> Back to Events
-  </button>
-
-  <mat-card class="detail-card">
-    <div mat-card-image class="detail-header">
-       <h1>{{event.title}}</h1>
-       <span class="category-badge">{{event.category}}</span>
+<div *ngIf="event$ | async as event; else loading">
+  
+  <!-- Hero Section -->
+  <div class="hero-header" [style.background-image]="'url(' + event.image + ')'">
+    <div class="hero-overlay">
+      <div class="hero-container">
+        <div class="hero-meta">
+          <span class="badge badge-category">{{event.category}}</span>
+          <span class="badge badge-status" *ngIf="event.availableSeats === 0">Sold Out</span>
+          <span class="badge badge-status" *ngIf="event.availableSeats < 10 && event.availableSeats > 0">Filling Fast</span>
+        </div>
+        <h1 class="hero-title">{{event.title}}</h1>
+        <div class="hero-subtitle">
+          <mat-icon>calendar_today</mat-icon> {{event.date | date:'fullDate'}}
+          <span style="margin: 0 8px">•</span>
+          <mat-icon>schedule</mat-icon> {{event.time}}
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div class="detail-layout">
     
-    <mat-card-content>
-      <div class="info-grid">
-        <div class="info-item">
-          <mat-icon color="primary">calendar_today</mat-icon>
-          <div>
-            <h3>Date & Time</h3>
-            <p>{{event.date | date:'fullDate'}} <br> {{event.time}}</p>
-          </div>
-        </div>
-
-        <div class="info-item" *ngIf="venue$ | async as venue">
-          <mat-icon color="primary">location_on</mat-icon>
-          <div>
-            <h3>Venue</h3>
-            <p>{{venue.name}} <br> {{venue.address}}, {{venue.city}}</p>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <mat-icon color="primary">person</mat-icon>
-          <div>
-            <h3>Organizer</h3>
-            <p>{{event.organizer}}</p>
-          </div>
-        </div>
+    <!-- Left Column: Tabs -->
+    <div class="main-content">
+      <mat-tab-group animationDuration="0ms" mat-stretch-tabs="false" mat-align-tabs="start">
         
-        <div class="info-item">
-          <mat-icon color="primary">event_seat</mat-icon>
+        <!-- Overview Tab -->
+        <mat-tab label="Overview">
+          <div class="section-content">
+            <h2>About this Event</h2>
+            <p class="description">{{event.description}}</p>
+            <p class="description">
+              Join us for an unforgettable experience at the {{event.title}}. 
+              Whether you are a enthusiast or a professional, this event brings together the best in {{event.category}}.
+            </p>
+
+            <h3>What to Expect</h3>
+            <div class="features-grid">
+              <div class="feature-item">
+                <mat-icon>public</mat-icon>
+                <div>
+                  <strong>Networking</strong>
+                  <p style="margin: 0; font-size: 0.9rem; color: #666">Connect with industry leaders</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <mat-icon>school</mat-icon>
+                <div>
+                  <strong>Workshops</strong>
+                  <p style="margin: 0; font-size: 0.9rem; color: #666">Hands-on learning sessions</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <mat-icon>restaurant</mat-icon>
+                <div>
+                  <strong>Catering</strong>
+                  <p style="margin: 0; font-size: 0.9rem; color: #666">Lunch and snacks included</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <mat-icon>verified</mat-icon>
+                <div>
+                  <strong>Certification</strong>
+                  <p style="margin: 0; font-size: 0.9rem; color: #666">Receive a certificate of participation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+
+        <!-- Venue Tab -->
+        <mat-tab label="Venue">
+          <div class="section-content" *ngIf="venue$ | async as venue">
+            <h2>{{venue.name}}</h2>
+            <p class="description">{{venue.address}}, {{venue.city}}</p>
+            
+            <div style="background: #f5f5f5; height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+              <div style="text-align: center; color: #999;">
+                <mat-icon style="font-size: 48px; width: 48px; height: 48px;">map</mat-icon>
+                <p>Map Placeholder</p>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+
+        <!-- Agenda Tab (Mock) -->
+        <mat-tab label="Agenda">
+          <div class="section-content">
+            <h2>Schedule</h2>
+            <mat-list>
+              <mat-list-item>
+                <mat-icon matListItemIcon>radio_button_checked</mat-icon>
+                <div matListItemTitle>Registration & Breakfast</div>
+                <div matListItemLine>08:00 AM - 09:00 AM</div>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon matListItemIcon>radio_button_checked</mat-icon>
+                <div matListItemTitle>Opening Keynote</div>
+                <div matListItemLine>09:00 AM - 10:30 AM</div>
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon matListItemIcon>radio_button_checked</mat-icon>
+                <div matListItemTitle>Networking Lunch</div>
+                <div matListItemLine>12:00 PM - 01:00 PM</div>
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </mat-tab>
+
+      </mat-tab-group>
+    </div>
+
+    <!-- Right Column: Sticky Booking Card -->
+    <aside class="booking-sidebar">
+      <mat-card class="booking-card">
+        <span class="price-tag">Free</span> <!-- Mock Price -->
+        
+        <div class="info-row">
+          <mat-icon>event_seat</mat-icon>
           <div>
-            <h3>Availability</h3>
-            <p>{{event.availableSeats}} / {{event.totalSeats}} seats left</p>
+            <span class="info-label">Availability</span>
+            <span class="info-value">{{event.availableSeats}} / {{event.totalSeats}} seats</span>
           </div>
         </div>
-      </div>
+        <mat-progress-bar mode="determinate" 
+            [value]="(event.availableSeats / event.totalSeats) * 100" 
+            style="margin-bottom: 24px;">
+        </mat-progress-bar>
 
-      <div class="description-section">
-        <h2>About Event</h2>
-        <p>{{event.description}}</p>
-      </div>
-    </mat-card-content>
+        <div class="info-row">
+          <mat-icon>person</mat-icon>
+          <div>
+            <span class="info-label">Organized by</span>
+            <div class="organizer-profile">
+              <div class="avatar">{{event.organizer.charAt(0)}}</div>
+              <span class="info-value">{{event.organizer}}</span>
+            </div>
+          </div>
+        </div>
 
-    <mat-card-actions align="end" class="actions">
-      <button mat-stroked-button color="warn" disabled *ngIf="event.availableSeats === 0">SOLD OUT</button>
-      <button mat-raised-button color="primary" 
-              [routerLink]="['/book', event.id]"
-              *ngIf="event.availableSeats > 0">
-        BOOK TICKETS
-      </button>
-    </mat-card-actions>
-  </mat-card>
+        <div class="action-buttons">
+          <button mat-raised-button color="primary" 
+                  [routerLink]="['/book', event.id]"
+                  [disabled]="event.availableSeats === 0">
+            {{ event.availableSeats === 0 ? 'SOLD OUT' : 'BOOK NOW' }}
+          </button>
+          
+          <button mat-stroked-button color="primary">
+            <mat-icon>share</mat-icon> SHARE EVENT
+          </button>
+        </div>
+      </mat-card>
+    </aside>
+
+  </div>
+
 </div>
 
 <ng-template #loading>
-  <div class="container loading">
+  <div class="container loading-spinner" style="height: 80vh; display: flex; align-items: center; justify-content: center;">
     <mat-spinner></mat-spinner>
   </div>
 </ng-template>

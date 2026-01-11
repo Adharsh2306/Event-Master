@@ -1,37 +1,56 @@
 <div class="container">
   <div class="header-section">
-    <h1>Upcoming Events</h1>
+    <h1>Discover Events</h1>
     <mat-form-field appearance="outline" class="category-filter">
       <mat-label>Filter by Category</mat-label>
       <mat-select [(value)]="selectedCategory">
         <mat-option *ngFor="let cat of categories" [value]="cat">{{cat}}</mat-option>
       </mat-select>
+      <mat-icon matSuffix>filter_list</mat-icon>
     </mat-form-field>
   </div>
 
-  <div class="event-grid">
-    <mat-card *ngFor="let event of (events$ | async) | categoryFilter:selectedCategory" 
+  <div class="event-grid" *ngIf="events$ | async as events; else loading">
+    <mat-card *ngFor="let event of events | categoryFilter:selectedCategory" 
               class="event-card"
-              [appHighlightEvent]="event.isFeatured">
-      <!-- Placeholder image logic handled in template for simplicity or assumes image property exists -->
-      <div mat-card-image class="image-placeholder">
-        {{event.category.charAt(0)}}
+              [appHighlightEvent]="event.isFeatured"
+              [routerLink]="['/events', event.id]">
+      
+      <div class="card-image-wrapper">
+        <img [src]="event.image" [alt]="event.title" class="event-image">
+        <span class="category-tag">{{event.category}}</span>
       </div>
+
       <mat-card-header>
         <mat-card-title>{{event.title}}</mat-card-title>
-        <mat-card-subtitle>{{event.date | date:'mediumDate'}} | {{event.time}}</mat-card-subtitle>
+        <mat-card-subtitle>
+          <mat-icon style="font-size: 18px; width: 18px; height: 18px;">event</mat-icon>
+          {{event.date | date:'mediumDate'}}
+        </mat-card-subtitle>
       </mat-card-header>
+
       <mat-card-content>
-        <p class="description">{{event.description}}</p>
-        <p class="seats"><strong>Available Seats:</strong> {{event.availableSeats}} / {{event.totalSeats}}</p>
+        <p>{{event.description | slice:0:80}}...</p>
+        <div class="seats-info">
+          <strong>{{event.availableSeats}}</strong> seats remaining
+        </div>
       </mat-card-content>
+
       <mat-card-actions align="end">
-        <button mat-button color="primary" [routerLink]="['/events', event.id]">VIEW DETAILS</button>
+        <button mat-button color="primary">DETAILS</button>
+        <button mat-raised-button color="primary" *ngIf="event.availableSeats > 0">BOOK</button>
       </mat-card-actions>
     </mat-card>
+
+    <div *ngIf="(events | categoryFilter:selectedCategory).length === 0" class="no-results">
+      <p>No events found in this category.</p>
+    </div>
   </div>
   
-  <div *ngIf="(events$ | async) === null" class="loading">
-    <mat-spinner diameter="40"></mat-spinner>
-  </div>
+  <ng-template #loading>
+    <div class="loading">
+      <mat-spinner diameter="50"></mat-spinner>
+      <p>Loading amazing events...</p>
+    </div>
+  </ng-template>
 </div>

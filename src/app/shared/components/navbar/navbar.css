@@ -1,12 +1,37 @@
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-md);
+  background: var(--primary-blue) !important;
+  color: white !important;
+  padding: 0 24px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .spacer {
   flex: 1 1 auto;
 }
 
 .active-link {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
 }
 
-a {
-  color: white;
-  text-decoration: none;
+a.mat-mdc-button {
+  color: white !important;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+a.mat-mdc-button:hover {
+  background: rgba(255, 255, 255, 0.1);
 }

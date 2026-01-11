@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Angular Advanced Workshop",
-    "description": "Deep dive into Angular 17+ features, signals, and performance optimization.",
+    "description": "Deep dive into Angular 17+ features, signals, and performance optimization. Join industry experts for hands-on coding sessions.",
     "category": "Tech",
     "date": "2026-02-15",
     "time": "09:00",
@@ -11,12 +11,12 @@
     "totalSeats": 50,
     "availableSeats": 45,
     "isFeatured": true,
-    "image": "assets/images/angular-workshop.jpg"
+    "image": "https://picsum.photos/seed/angular1/800/600"
   },
   {
     "id": 2,
     "title": "Summer Music Festival",
-    "description": "A weekend of live music, food, and fun under the sun.",
+    "description": "A weekend of live music, food, and fun under the sun. Featuring top bands from around the country.",
     "category": "Music",
     "date": "2026-06-20",
     "time": "14:00",
@@ -25,12 +25,12 @@
     "totalSeats": 500,
     "availableSeats": 120,
     "isFeatured": true,
-    "image": "assets/images/music-fest.jpg"
+    "image": "https://picsum.photos/seed/musicfest/800/600"
   },
   {
     "id": 3,
     "title": "City Marathon 2026",
-    "description": "Annual city marathon. Run for a cause!",
+    "description": "Annual city marathon. Run for a cause! Registration includes a t-shirt and medal.",
     "category": "Sports",
     "date": "2026-03-10",
     "time": "06:00",
@@ -39,12 +39,12 @@
     "totalSeats": 1000,
     "availableSeats": 850,
     "isFeatured": false,
-    "image": "assets/images/marathon.jpg"
+    "image": "https://picsum.photos/seed/marathon/800/600"
   },
   {
     "id": 4,
     "title": "Startup Pitch Night",
-    "description": "Watch the best startups pitch their ideas to investors.",
+    "description": "Watch the best startups pitch their ideas to investors. Network with entrepreneurs and VCs.",
     "category": "Business",
     "date": "2026-04-05",
     "time": "18:00",
@@ -53,6 +53,6 @@
     "totalSeats": 100,
     "availableSeats": 10,
     "isFeatured": false,
-    "image": "assets/images/startup.jpg"
+    "image": "https://picsum.photos/seed/startup/800/600"
   }
 ]

@@ -1,47 +1,81 @@
 .dashboard-content {
-  margin-top: 24px;
+  margin-top: 32px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--primary-blue);
+  margin-bottom: 24px;
 }
 
 .table-container {
-  overflow-x: auto;
-  border-radius: 4px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: white;
+  box-shadow: var(--shadow-sm);
 }
 
 table {
   width: 100%;
 }
 
+th.mat-mdc-header-cell {
+  background-color: var(--primary-blue-light);
+  color: var(--primary-blue-dark);
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+tr.mat-mdc-row:hover {
+  background-color: #f5f5f5;
+}
+
 .status-badge {
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
   background-color: #eee;
   color: #666;
+  display: inline-block;
 }
 
 .status-badge.active {
-  background-color: #e8f5e9; /* Light green */
-  color: #2e7d32; /* Dark green */
+  background-color: #E8F5E9; 
+  color: #2E7D32; 
+  border: 1px solid #C8E6C9;
+}
+
+.status-badge.cancelled {
+  background-color: #FFEBEE;
+  color: #C62828;
+  border: 1px solid #FFCDD2;
 }
 
 .empty-state {
   text-align: center;
-  padding: 48px;
+  padding: 64px 24px;
   background-color: white;
-  border-radius: 4px;
-  border: 1px dashed #ccc;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .empty-state mat-icon {
-  font-size: 48px;
-  height: 48px;
-  width: 48px;
-  color: #ccc;
-  margin-bottom: 16px;
+  font-size: 64px;
+  height: 64px;
+  width: 64px;
+  color: var(--text-light);
+  opacity: 0.5;
 }
 
-.loading {
-  display: flex;
-  justify-content: center;
-  padding: 48px;
+.empty-state h3 {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin: 0;
 }

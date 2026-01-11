@@ -1,15 +1,26 @@
 <mat-toolbar color="primary">
-  <span>Event Manager</span>
+  <span class="logo">
+    <mat-icon>confirmation_number</mat-icon>
+    EventMaster
+  </span>
   <span class="spacer"></span>
   
-  <a mat-button routerLink="/events" routerLinkActive="active-link">Events</a>
+  <a mat-button routerLink="/events" routerLinkActive="active-link">
+    <mat-icon>event</mat-icon> Events
+  </a>
   
   <ng-container *ngIf="isLoggedIn$ | async; else loginBtn">
-    <a mat-button routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a>
-    <button mat-button (click)="logout()">Logout</button>
+    <a mat-button routerLink="/dashboard" routerLinkActive="active-link">
+      <mat-icon>dashboard</mat-icon> Dashboard
+    </a>
+    <button mat-button (click)="logout()">
+      <mat-icon>logout</mat-icon> Logout
+    </button>
   </ng-container>
 
   <ng-template #loginBtn>
-    <button mat-button (click)="login()">Login (Demo)</button>
+    <button mat-button (click)="login()">
+      <mat-icon>login</mat-icon> Login (Demo)
+    </button>
   </ng-template>
 </mat-toolbar>

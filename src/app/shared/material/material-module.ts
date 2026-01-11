@@ -13,6 +13,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatChipsModule } from '@angular/material/chips';
 
 const MATERIAL_MODULES = [
   MatToolbarModule,
@@ -28,7 +31,10 @@ const MATERIAL_MODULES = [
   MatListModule,
   MatTableModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatTabsModule,
+  MatProgressBarModule,
+  MatChipsModule
 ];
 
 @NgModule({
