@@ -1,0 +1,68 @@
+<div class="container" *ngIf="event$ | async as event; else loading">
+  <button mat-button color="accent" routerLink="/events">
+    <mat-icon>arrow_back</mat-icon> Back to Events
+  </button>
+
+  <mat-card class="detail-card">
+    <div mat-card-image class="detail-header">
+       <h1>{{event.title}}</h1>
+       <span class="category-badge">{{event.category}}</span>
+    </div>
+    
+    <mat-card-content>
+      <div class="info-grid">
+        <div class="info-item">
+          <mat-icon color="primary">calendar_today</mat-icon>
+          <div>
+            <h3>Date & Time</h3>
+            <p>{{event.date | date:'fullDate'}} <br> {{event.time}}</p>
+          </div>
+        </div>
+
+        <div class="info-item" *ngIf="venue$ | async as venue">
+          <mat-icon color="primary">location_on</mat-icon>
+          <div>
+            <h3>Venue</h3>
+            <p>{{venue.name}} <br> {{venue.address}}, {{venue.city}}</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <mat-icon color="primary">person</mat-icon>
+          <div>
+            <h3>Organizer</h3>
+            <p>{{event.organizer}}</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <mat-icon color="primary">event_seat</mat-icon>
+          <div>
+            <h3>Availability</h3>
+            <p>{{event.availableSeats}} / {{event.totalSeats}} seats left</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="description-section">
+        <h2>About Event</h2>
+        <p>{{event.description}}</p>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions align="end" class="actions">
+      <button mat-stroked-button color="warn" disabled *ngIf="event.availableSeats === 0">SOLD OUT</button>
+      <button mat-raised-button color="primary" 
+              [routerLink]="['/book', event.id]"
+              *ngIf="event.availableSeats > 0">
+        BOOK TICKETS
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<ng-template #loading>
+  <div class="container loading">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

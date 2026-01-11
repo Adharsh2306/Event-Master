@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="header-section">
+    <h1>Upcoming Events</h1>
+    <mat-form-field appearance="outline" class="category-filter">
+      <mat-label>Filter by Category</mat-label>
+      <mat-select [(value)]="selectedCategory">
+        <mat-option *ngFor="let cat of categories" [value]="cat">{{cat}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="event-grid">
+    <mat-card *ngFor="let event of (events$ | async) | categoryFilter:selectedCategory" 
+              class="event-card"
+              [appHighlightEvent]="event.isFeatured">
+      <!-- Placeholder image logic handled in template for simplicity or assumes image property exists -->
+      <div mat-card-image class="image-placeholder">
+        {{event.category.charAt(0)}}
+      </div>
+      <mat-card-header>
+        <mat-card-title>{{event.title}}</mat-card-title>
+        <mat-card-subtitle>{{event.date | date:'mediumDate'}} | {{event.time}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="description">{{event.description}}</p>
+        <p class="seats"><strong>Available Seats:</strong> {{event.availableSeats}} / {{event.totalSeats}}</p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button color="primary" [routerLink]="['/events', event.id]">VIEW DETAILS</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
+  <div *ngIf="(events$ | async) === null" class="loading">
+    <mat-spinner diameter="40"></mat-spinner>
+  </div>
+</div>
