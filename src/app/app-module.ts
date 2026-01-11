@@ -6,6 +6,7 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { CoreModule } from './core/core-module';
+import { SharedModule } from './shared/shared-module';
 import { loadingInterceptor } from './core/interceptors/loading-interceptor';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { loadingInterceptor } from './core/interceptors/loading-interceptor';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    SharedModule
   ],
   providers: [
     provideHttpClient(withInterceptors([loadingInterceptor]))
