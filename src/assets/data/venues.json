@@ -1,0 +1,30 @@
+[
+  {
+    "id": 101,
+    "name": "Tech Convention Center",
+    "address": "123 Innovation Dr",
+    "city": "San Francisco",
+    "capacity": 200
+  },
+  {
+    "id": 102,
+    "name": "Central Park Open Grounds",
+    "address": "5th Avenue",
+    "city": "New York",
+    "capacity": 1000
+  },
+  {
+    "id": 103,
+    "name": "City Stadium",
+    "address": "100 Sports Way",
+    "city": "Chicago",
+    "capacity": 5000
+  },
+  {
+    "id": 104,
+    "name": "Downtown Hub",
+    "address": "456 Market St",
+    "city": "Seattle",
+    "capacity": 150
+  }
+]

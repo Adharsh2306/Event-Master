@@ -1,0 +1,66 @@
+/* Global Styles */
+
+:root {
+  /* Blue Palette */
+  --primary-blue: #1565C0;    /* Blue 800 - Good contrast for headers/buttons */
+  --primary-blue-light: #5E92F3;
+  --primary-blue-dark: #003C8F;
+
+  --secondary-blue: #64B5F6;  /* Blue 300 - Secondary elements */
+  --secondary-blue-light: #9BE7FF;
+  --secondary-blue-dark: #2286C3;
+
+  --accent-blue: #00E5FF;     /* Cyan A400 - Highlights/Accents */
+  
+  --bg-light: #F0F4F8;        /* Very light blue-grey for background */
+  --bg-white: #FFFFFF;
+  
+  --text-primary: #0D47A1;    /* Dark blue text for headings */
+  --text-body: #37474F;       /* Blue-grey for body text */
+  --text-on-primary: #FFFFFF;
+
+  /* Spacing Variables */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+}
+
+html, body { 
+  height: 100%; 
+}
+
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  background-color: var(--bg-light);
+  color: var(--text-body);
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--primary-blue-dark);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
