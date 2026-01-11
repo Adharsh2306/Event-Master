@@ -1,0 +1,27 @@
+.booking-card {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 24px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-row {
+  margin-bottom: 16px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
