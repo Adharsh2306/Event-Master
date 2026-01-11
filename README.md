@@ -97,12 +97,17 @@ This project was developed as a benchmark for clean Angular architecture, demons
 | Lazy-Loaded Routes | 3                                 |
 | Guard Protection   | Auth Guard on Dashboard           |
 
-## 🎨 Screenshots & Usage
+## 📸 Project Screenshots
 
-**Event List View**: Browse events with real-time filtering by category
-**Event Detail**: Immersive detail pages with sticky booking cards
-**Booking Form**: Reactive form with custom validation and seat availability checks
-**Dashboard**: User's private area for tracking reservations
+| **Event Discovery** | **Immersive Details** |
+|:---:|
+| ![Events Page](screenshots/eventsPageScreenshot.png) | ![Event Details](screenshots/eventDetailsPageScreenshot.png) |
+| *Browse upcoming events with filters* | *Rich details with tabs and sticky booking* |
+
+| **Secure Booking** | **User Dashboard** |
+|:---:|
+| ![Booking Form](screenshots/bookingFormScreenshot.png) | ![Dashboard](screenshots/dashboardPageScreenshot.png) |
+| *Form validation and auth checks* | *Manage your reservations* |
 
 ## 📚 Documentation
 

@@ -11,4 +11,11 @@ export interface Event {
   availableSeats: number;
   isFeatured: boolean;
   image?: string;
+  features?: EventFeature[];
+}
+
+export interface EventFeature {
+  icon: string;
+  title: string;
+  description: string;
 }

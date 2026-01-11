@@ -1,30 +1,128 @@
 [
   {
-    "id": 101,
+    "id": 201,
     "name": "Bangalore International Exhibition Centre (BIEC)",
     "address": "10th Mile, Tumkur Road",
     "city": "Bengaluru",
     "capacity": 5000
   },
   {
-    "id": 102,
+    "id": 202,
+    "name": "NASSCOM 10000 Startups Warehouse",
+    "address": "1st Floor, VR Bengaluru, Mahadevapura",
+    "city": "Bengaluru",
+    "capacity": 500
+  },
+  {
+    "id": 203,
     "name": "Chowdiah Memorial Hall",
     "address": "16th Cross, G.D. Park Extension, Vyalikaval",
     "city": "Bengaluru",
     "capacity": 1000
   },
   {
-    "id": 103,
-    "name": "Sree Kanteerava Stadium",
-    "address": "Kasturba Road, Sampangi Rama Nagara",
+    "id": 204,
+    "name": "Bharatiya Vidya Bhavan Auditorium",
+    "address": "Race Course Road",
     "city": "Bengaluru",
-    "capacity": 25000
+    "capacity": 400
   },
   {
-    "id": 104,
-    "name": "WeWork Galaxy",
-    "address": "43, Residency Road, Shanthala Nagar",
+    "id": 205,
+    "name": "Cubbon Park Central Grounds",
+    "address": "Kasturba Road",
+    "city": "Bengaluru",
+    "capacity": 30000
+  },
+  {
+    "id": 206,
+    "name": "Bangalore Football Stadium",
+    "address": "Ashok Nagar",
+    "city": "Bengaluru",
+    "capacity": 15000
+  },
+  {
+    "id": 207,
+    "name": "WeWork Indiranagar",
+    "address": "12th Main Road, HAL 2nd Stage",
     "city": "Bengaluru",
     "capacity": 200
+  },
+  {
+    "id": 208,
+    "name": "The Lalit Ashok Convention Hall",
+    "address": "Kumara Krupa High Grounds",
+    "city": "Bengaluru",
+    "capacity": 300
+  },
+  {
+    "id": 209,
+    "name": "Palace Grounds",
+    "address": "Jayamahal Road",
+    "city": "Bengaluru",
+    "capacity": 35000
+  },
+  {
+    "id": 210,
+    "name": "Jayamahal Palace Hotel Lawns",
+    "address": "Jayamahal Road",
+    "city": "Bengaluru",
+    "capacity": 1200
+  },
+  {
+    "id": 211,
+    "name": "Ravindra Kalakshetra",
+    "address": "K.H. Road",
+    "city": "Bengaluru",
+    "capacity": 1000
+  },
+  {
+    "id": 212,
+    "name": "Ranga Shankara Theatre",
+    "address": "JP Nagar 2nd Phase",
+    "city": "Bengaluru",
+    "capacity": 350
+  },
+  {
+    "id": 213,
+    "name": "Suchitra Film Society Auditorium",
+    "address": "Banashankari 6th Stage",
+    "city": "Bengaluru",
+    "capacity": 450
+  },
+  {
+    "id": 214,
+    "name": "RV College of Engineering Indoor Arena",
+    "address": "Mysore Road",
+    "city": "Bengaluru",
+    "capacity": 800
+  },
+  {
+    "id": 215,
+    "name": "Art of Living International Center",
+    "address": "Udayapura, Kanakapura Road",
+    "city": "Bengaluru",
+    "capacity": 5000
+  },
+  {
+    "id": 216,
+    "name": "Karnataka Chitrakala Parishath",
+    "address": "Kumara Krupa Road",
+    "city": "Bengaluru",
+    "capacity": 2500
+  },
+  {
+    "id": 217,
+    "name": "KR Market Heritage Zone",
+    "address": "Kalasaipalya",
+    "city": "Bengaluru",
+    "capacity": 300
+  },
+  {
+    "id": 218,
+    "name": "Indian Music Experience Museum",
+    "address": "Brigade Millennium Avenue, JP Nagar",
+    "city": "Bengaluru",
+    "capacity": 250
   }
 ]

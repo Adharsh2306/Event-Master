@@ -2,57 +2,360 @@
   {
     "id": 1,
     "title": "Bengaluru Tech Summit 2026",
-    "description": "Asia's largest technology event. Join industry leaders in Whitefield to discuss AI, Robotics, and the future of Indian IT.",
+    "description": "India’s flagship technology summit bringing together policymakers, startups, and global tech leaders to discuss AI, semiconductors, and digital infrastructure.",
     "category": "Tech",
     "date": "2026-02-15",
     "time": "09:00",
-    "venueId": 101,
+    "venueId": 201,
     "organizer": "Karnataka Digital Economy Mission",
     "totalSeats": 500,
-    "availableSeats": 45,
+    "availableSeats": 38,
     "isFeatured": true,
-    "image": "https://picsum.photos/seed/techblr/800/600"
+    "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      { "icon": "public", "title": "Networking", "description": "Connect with industry leaders" },
+      { "icon": "school", "title": "Workshops", "description": "Hands-on tech sessions" },
+      { "icon": "mic", "title": "Keynotes", "description": "Talks by global experts" }
+    ]
   },
   {
     "id": 2,
-    "title": "Carnatic Classical Night",
-    "description": "A soulful evening of Carnatic music featuring renowned artists. Experience the cultural heritage of South India.",
-    "category": "Music",
-    "date": "2026-06-20",
-    "time": "18:00",
-    "venueId": 102,
-    "organizer": "Sangeetha Sabha Bengaluru",
-    "totalSeats": 800,
-    "availableSeats": 120,
+    "title": "India AI & Data Science Conference",
+    "description": "A focused conference on applied AI, data science, and machine learning use cases across Indian industries.",
+    "category": "Tech",
+    "date": "2026-03-22",
+    "time": "10:00",
+    "venueId": 202,
+    "organizer": "NASSCOM",
+    "totalSeats": 400,
+    "availableSeats": 96,
     "isFeatured": true,
-    "image": "https://picsum.photos/seed/musicblr/800/600"
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      { "icon": "insights", "title": "Use Cases", "description": "Real-world AI deployments" },
+      { "icon": "groups", "title": "Panels", "description": "Discussions with data leaders" },
+      { "icon": "code", "title": "Live Demos", "description": "Tools and models in action" }
+    ]
   },
   {
     "id": 3,
-    "title": "Namma Bengaluru Marathon",
-    "description": "Run through the green streets of Cubbon Park and MG Road. Promoting fitness and a greener city.",
-    "category": "Sports",
-    "date": "2026-03-10",
-    "time": "05:30",
-    "venueId": 103,
-    "organizer": "Run India Foundation",
-    "totalSeats": 2000,
-    "availableSeats": 850,
-    "isFeatured": false,
-    "image": "https://picsum.photos/seed/runblr/800/600"
+    "title": "Carnatic Classical Music Evening",
+    "description": "A traditional Carnatic music concert featuring vocal and instrumental performances by leading South Indian artists.",
+    "category": "Music",
+    "date": "2026-06-20",
+    "time": "18:30",
+    "venueId": 203,
+    "organizer": "Sangeetha Sabha Bengaluru",
+    "totalSeats": 800,
+    "availableSeats": 142,
+    "isFeatured": true,
+    "image": "https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      { "icon": "music_note", "title": "Live Concert", "description": "Classical performances" },
+      { "icon": "theaters", "title": "Acoustics", "description": "Premium sound quality" },
+      { "icon": "event_seat", "title": "Comfort Seating", "description": "Spacious auditorium" }
+    ]
   },
   {
     "id": 4,
-    "title": "Indiranagar Startup Meetup",
-    "description": "Pitch your ideas to top VCs from Koramangala and HSR Layout. Network with the founders of India's next unicorns.",
+    "title": "Hindustani Classical Baithak",
+    "description": "An intimate Hindustani classical music baithak highlighting khayal and instrumental traditions.",
+    "category": "Music",
+    "date": "2026-07-05",
+    "time": "19:00",
+    "venueId": 204,
+    "organizer": "SPIC MACAY Bengaluru Chapter",
+    "totalSeats": 300,
+    "availableSeats": 88,
+    "isFeatured": false,
+    "image": "https://images.unsplash.com/photo-1497032205916-ac775f0649ae?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      { "icon": "music_note", "title": "Baithak Style", "description": "Close interaction format" },
+      {
+        "icon": "record_voice_over",
+        "title": "Artist Interaction",
+        "description": "Post-performance Q&A"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Namma Bengaluru City Marathon",
+    "description": "A city marathon promoting fitness and sustainability, running through Cubbon Park and central Bengaluru.",
+    "category": "Sports",
+    "date": "2026-03-10",
+    "time": "05:30",
+    "venueId": 205,
+    "organizer": "Run India Foundation",
+    "totalSeats": 2000,
+    "availableSeats": 790,
+    "isFeatured": false,
+    "image": "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      {
+        "icon": "directions_run",
+        "title": "Certified Route",
+        "description": "Official marathon course"
+      },
+      { "icon": "local_hospital", "title": "Medical Support", "description": "Doctors on standby" },
+      { "icon": "eco", "title": "Eco Friendly", "description": "Plastic-free event" }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Inter-College Football Championship",
+    "description": "A competitive football tournament featuring top colleges from across Karnataka.",
+    "category": "Sports",
+    "date": "2026-08-12",
+    "time": "08:00",
+    "venueId": 206,
+    "organizer": "Department of Youth Empowerment & Sports",
+    "totalSeats": 1200,
+    "availableSeats": 410,
+    "isFeatured": false,
+    "image": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      {
+        "icon": "sports_soccer",
+        "title": "College Teams",
+        "description": "Top Karnataka colleges"
+      },
+      { "icon": "emoji_events", "title": "Trophies", "description": "Winner awards" }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Indiranagar Startup & VC Meetup",
+    "description": "A networking meetup for early-stage founders to pitch ideas and connect with angel investors and VCs.",
     "category": "Business",
     "date": "2026-04-05",
     "time": "17:00",
-    "venueId": 104,
+    "venueId": 207,
     "organizer": "Startup Karnataka",
     "totalSeats": 150,
-    "availableSeats": 10,
+    "availableSeats": 6,
     "isFeatured": false,
-    "image": "https://picsum.photos/seed/startupblr/800/600"
+    "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      { "icon": "handshake", "title": "Investor Access", "description": "Meet VCs and angels" },
+      { "icon": "trending_up", "title": "Startup Pitches", "description": "Live pitch sessions" },
+      { "icon": "forum", "title": "Founder Talks", "description": "Real startup journeys" }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Women Entrepreneurs of India Forum",
+    "description": "A panel discussion and networking forum highlighting women-led startups and enterprises in India.",
+    "category": "Business",
+    "date": "2026-05-18",
+    "time": "11:00",
+    "venueId": 208,
+    "organizer": "FICCI Ladies Organisation",
+    "totalSeats": 250,
+    "availableSeats": 74,
+    "isFeatured": true,
+    "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      { "icon": "groups", "title": "Panel Talks", "description": "Women founders & leaders" },
+      { "icon": "diversity_3", "title": "Networking", "description": "Peer connections" }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Indian Street Food Festival",
+    "description": "A curated food festival showcasing street food from across India.",
+    "category": "Food",
+    "date": "2026-01-25",
+    "time": "16:00",
+    "venueId": 209,
+    "organizer": "Bengaluru Food Collective",
+    "totalSeats": 3000,
+    "availableSeats": 1240,
+    "isFeatured": true,
+    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      { "icon": "restaurant", "title": "Street Food", "description": "All-India flavours" },
+      {
+        "icon": "local_fire_department",
+        "title": "Live Cooking",
+        "description": "Freshly prepared food"
+      },
+      { "icon": "music_note", "title": "Live Music", "description": "Evening performances" }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "South Indian Filter Coffee Fest",
+    "description": "A celebration of South India’s coffee culture with tastings and brewing workshops.",
+    "category": "Food",
+    "date": "2026-02-02",
+    "time": "15:00",
+    "venueId": 210,
+    "organizer": "Indian Coffee Board",
+    "totalSeats": 1000,
+    "availableSeats": 312,
+    "isFeatured": false,
+    "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      { "icon": "coffee", "title": "Coffee Tasting", "description": "Multiple blends" },
+      { "icon": "science", "title": "Brewing Workshops", "description": "Traditional methods" }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Bharatanatyam Dance Recital",
+    "description": "A classical Bharatanatyam performance by senior disciples showcasing traditional margam pieces.",
+    "category": "Dance",
+    "date": "2026-09-10",
+    "time": "18:00",
+    "venueId": 211,
+    "organizer": "Nritya Kala Foundation",
+    "totalSeats": 600,
+    "availableSeats": 190,
+    "isFeatured": false,
+    "image": "https://images.unsplash.com/photo-1604152135912-04a4e8f68b0b?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      {
+        "icon": "emoji_people",
+        "title": "Classical Dance",
+        "description": "Traditional Bharatanatyam"
+      },
+      { "icon": "theaters", "title": "Stage Setup", "description": "Professional lighting" }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Contemporary Indian Theatre Night",
+    "description": "A stage performance featuring modern Indian theatre exploring social and cultural themes.",
+    "category": "Theatre",
+    "date": "2026-10-03",
+    "time": "19:30",
+    "venueId": 212,
+    "organizer": "Ranga Shankara",
+    "totalSeats": 350,
+    "availableSeats": 52,
+    "isFeatured": false,
+    "image": "https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      { "icon": "theater_comedy", "title": "Live Theatre", "description": "Contemporary plays" },
+      { "icon": "forum", "title": "Post-show Talk", "description": "Actor discussions" }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Indian Short Film Showcase",
+    "description": "A screening of award-winning Indian short films followed by director interactions.",
+    "category": "Film",
+    "date": "2026-11-14",
+    "time": "17:30",
+    "venueId": 213,
+    "organizer": "Bangalore International Film Society",
+    "totalSeats": 400,
+    "availableSeats": 118,
+    "isFeatured": false,
+    "image": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      { "icon": "movie", "title": "Film Screenings", "description": "Indian short films" },
+      {
+        "icon": "record_voice_over",
+        "title": "Director Q&A",
+        "description": "Post-screening interaction"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "National Robotics Challenge – South Zone",
+    "description": "A competitive robotics event for engineering students across South India.",
+    "category": "Tech",
+    "date": "2026-08-01",
+    "time": "09:30",
+    "venueId": 214,
+    "organizer": "IIT Bombay Techfest Outreach",
+    "totalSeats": 600,
+    "availableSeats": 204,
+    "isFeatured": true,
+    "image": "https://images.unsplash.com/photo-1581091215367-59ab6b7afc91?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      { "icon": "smart_toy", "title": "Robotics Arena", "description": "Live robot challenges" },
+      { "icon": "school", "title": "Student Teams", "description": "Engineering colleges" }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Yoga & Wellness Retreat Day",
+    "description": "A full-day yoga and mindfulness retreat focusing on physical and mental well-being.",
+    "category": "Wellness",
+    "date": "2026-01-12",
+    "time": "06:00",
+    "venueId": 215,
+    "organizer": "Art of Living Foundation",
+    "totalSeats": 500,
+    "availableSeats": 160,
+    "isFeatured": false,
+    "image": "https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      { "icon": "self_improvement", "title": "Yoga", "description": "Guided sessions" },
+      { "icon": "spa", "title": "Meditation", "description": "Mindfulness practice" },
+      { "icon": "local_dining", "title": "Healthy Meals", "description": "Satvic food" }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Indian Handloom & Crafts Expo",
+    "description": "An exhibition showcasing traditional Indian handlooms, textiles, and handicrafts.",
+    "category": "Exhibition",
+    "date": "2026-12-05",
+    "time": "10:00",
+    "venueId": 216,
+    "organizer": "Ministry of Textiles",
+    "totalSeats": 2000,
+    "availableSeats": 980,
+    "isFeatured": true,
+    "image": "https://images.unsplash.com/photo-1598300054084-1a8b6b3d299c?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      { "icon": "checkroom", "title": "Handlooms", "description": "Traditional textiles" },
+      { "icon": "store", "title": "Craft Stalls", "description": "Artisan products" }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Photography Walk – Old Bengaluru",
+    "description": "A guided photography walk through heritage areas of Bengaluru focusing on street life and architecture.",
+    "category": "Photography",
+    "date": "2026-02-09",
+    "time": "07:00",
+    "venueId": 217,
+    "organizer": "Bangalore Photography Club",
+    "totalSeats": 80,
+    "availableSeats": 12,
+    "isFeatured": false,
+    "image": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      { "icon": "photo_camera", "title": "Photo Walk", "description": "Guided street photography" },
+      {
+        "icon": "architecture",
+        "title": "Heritage Sites",
+        "description": "Old Bengaluru landmarks"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Indian Classical Instrument Workshop",
+    "description": "A hands-on workshop introducing participants to veena, mridangam, and flute basics.",
+    "category": "Workshop",
+    "date": "2026-06-08",
+    "time": "14:00",
+    "venueId": 218,
+    "organizer": "Indian Music Experience Museum",
+    "totalSeats": 120,
+    "availableSeats": 34,
+    "isFeatured": false,
+    "image": "https://images.unsplash.com/photo-1586941962494-8e4f8f03a6b1?auto=format&fit=crop&w=800&q=80",
+    "features": [
+      { "icon": "library_music", "title": "Instrument Basics", "description": "Hands-on learning" },
+      { "icon": "groups", "title": "Small Batches", "description": "Personal guidance" }
+    ]
   }
 ]
